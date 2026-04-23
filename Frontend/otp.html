@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OTP Verification | FixRoad</title>
+
+    <!-- Responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- ================= Navbar ================= -->
+<header class="navbar">
+    <div class="logo">FixRoad</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="login.html">Login</a>
+    </nav>
+</header>
+
+<!-- ================= OTP Section ================= -->
+<section class="form-section">
+
+    <div>
+       <img class="image2" src="images/otp.jpeg" alt="">
+    </div> 
+
+    <div class="form-card">
+        <h2>OTP Verification</h2>
+
+        <!-- Instruction text -->
+        <p class="otp-text">
+            Enter the 6-digit code sent to your email.
+        </p>
+
+        <!-- OTP Form -->
+        <form id="otpForm">
+
+            <!-- OTP Input -->
+            <input 
+                type="text"
+                id="otpInput"
+                maxlength="6"
+                placeholder="Enter OTP"
+                required
+                class="otp-input"
+            >
+
+            <input 
+    type="email"
+    id="otpEmail"
+    placeholder="Enter your email"
+    required
+>
+
+
+            <!-- Error message display -->
+            <p id="otpError" class="error-text"></p>
+
+            <p id="otpMessage"></p>
+
+            <!-- Submit button -->
+            <button type="submit" class="btn-dark form-btn">
+                Verify OTP
+            </button>
+        </form>
+
+        <!-- Resend link -->
+        <p class="form-footer">
+            Didn’t receive the code?
+            <a href="#">Resend OTP</a>
+        </p>
+    </div>
+</section>
+
+<!-- Main JavaScript -->
+<script src="js/script.js"></script>
+
+</body>
+</html>

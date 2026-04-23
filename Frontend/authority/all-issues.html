@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Issues | FixRoad Admin</title>
+
+    <!-- Responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+<!-- ================= Top Bar ================= -->
+<header class="topbar">
+    <div class="top-left">
+        <!-- Sidebar toggle button -->
+        <button id="menuToggle" class="menu-btn">☰</button>
+        <div class="logo">FixRoad Admin</div>
+    </div>
+</header>
+
+<!-- ================= Sidebar ================= -->
+<aside id="sidebar" class="sidebar">
+
+    <!-- Admin menu -->
+    <div class="sidebar-menu">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="all-issues.html" class="active">All Issues</a>
+    </div>
+
+    <!-- Logout section -->
+    <div class="sidebar-logout">
+       <a href="#" onclick="logout(event)">Logout</a>
+    </div>
+</aside>
+
+<!-- ================= Main Content ================= -->
+<main id="content" class="content">
+    <h2>All Reported Issues</h2>
+    <p class="page-subtitle">
+        Monitor and manage all reported road issues
+    </p>
+
+
+    <!-- ================= Filter Section ================= -->
+<div class="filter-bar">
+
+    <div class="filter-group">
+        <label>Status</label>
+        <select id="filterStatus">
+            <option value="">All</option>
+            <option value="REPORTED">Reported </option>
+            <option value="IN_PROGRESS">In Progress</option>
+            <option value="RESOLVED">Resolved</option>
+            
+        </select>
+    </div>
+
+    <div class="filter-group">
+        <label>Priority</label>
+        <select id="filterPriority">
+            <option value="">All</option>
+            <option value="CRITICAL">Critical</option>
+            <option value="HIGH">High</option>
+            <option value="MEDIUM">Medium</option>
+            <option value="LOW">Low</option>
+        </select>
+    </div>
+
+    <div class="filter-group">
+        <label>Issue Type</label>
+        <select id="filterType">
+            <option value="">All</option>
+            <option value="Pothole">Pothole</option>
+            <option value="Waterlogging">Waterlogging</option>
+            <option value="Streetlight Issue">Streetlight</option>
+            <option value="Damaged Road">Damaged Road</option>
+        </select>
+    </div>
+
+    <button id="resetFilter" class="btn-dark filter-reset">
+        Reset Filters
+    </button>
+
+</div>
+
+<div class="table-section">
+
+    <div class="table-header">
+        <h3>Reported Issues</h3>
+    </div>
+
+    <!-- Issues table -->
+    <div class="table-container">
+        <table class="issue-table authority-issues-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>User</th>
+                    <th>Issue Type</th>
+                    <th>Location</th>
+                    <th>Priority</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="issuesTableBody"></tbody>
+
+        </table>
+    </div>
+</div>
+</main>
+
+<!-- Main JavaScript -->
+<script src="/js/script.js"></script>
+
+<script src="/js/all-issues.js"></script>
+
+<script>
+    protectPage("AUTHORITY");
+</script>
+
+</body>
+</html>
+
+

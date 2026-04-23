@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register | FixRoad</title>
+
+    <!-- Responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- ================= Navbar ================= -->
+<header class="navbar">
+    <div class="logo">FixRoad</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="login.html">Login</a>
+    </nav>
+</header>
+
+<!-- ================= Registration Section ================= -->
+<section class="form-section">
+    
+    <div>
+        <img class="image2" src="images/registration.jpeg" alt="">
+    </div>
+
+    <div class="form-card">
+        <h2>Create Account</h2>
+
+        <!-- Registration Form -->
+        <form id="registerForm">
+
+            <!-- Full Name -->
+            <label>Full Name</label>
+            <input type="text" id="regName" placeholder="Enter your full name" required>
+
+            <!-- Email -->
+            <label>Email</label>
+            <input type="email" id="regEmail" placeholder="Enter your email" required>
+
+            <!-- Password -->
+            <label>Password</label>
+            <div class="password-wrapper">
+                <input type="password" id="regPassword" placeholder="Create password" required>
+                <button type="button" class="toggle-password-btn" data-target="regPassword">
+        Show
+    </button>
+            </div>
+
+            <!-- Confirm Password -->
+            <label>Confirm Password</label>
+            <div class="password-wrapper">
+                 <input type="password" id="regConfirmPassword" placeholder="Confirm password" required>
+                 <button type="button" class="toggle-password-btn" data-target="regConfirmPassword">
+        Show
+    </button>
+            </div>
+
+             <p id="registerError" class="error-text"></p>
+
+            <!-- Submit Button -->
+            <button type="submit" id="registerBtn" class="btn-dark form-btn">
+                Register
+            </button>
+
+        </form>
+
+        <!-- Login Redirect -->
+        <p class="form-footer">
+            Already have an account?
+            <a href="login.html">Login</a>
+        </p>
+    </div>
+</section>
+
+<!-- Main JavaScript -->
+<script src="js/script.js"></script>
+
+</body>
+</html>

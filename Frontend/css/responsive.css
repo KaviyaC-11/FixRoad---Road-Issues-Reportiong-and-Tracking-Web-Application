@@ -1,0 +1,861 @@
+/* =================================================
+   RESPONSIVE CSS — FixRoad
+   Breakpoints:
+     Tablet  : max-width 1024px
+     Mobile  : max-width 768px
+     Small   : max-width 480px
+   
+   Desktop / Laptop view is untouched (no changes
+   above 1024px).
+================================================= */
+
+
+/* =================================================
+   TABLET — max-width 1024px
+================================================= */
+
+@media (max-width: 1024px) {
+
+    /* ---------- Navbar ---------- */
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    /* ---------- Simple header ---------- */
+    .simple-header {
+        padding: 15px 20px;
+    }
+
+    /* ---------- Index Hero ---------- */
+    .hero-overlay h1 {
+        font-size: 36px;
+    }
+
+    .hero-overlay p {
+        font-size: 16px;
+    }
+
+    /* ---------- Blog ---------- */
+    .blog-title {
+        font-size: 26px;
+        margin-bottom: 40px;
+    }
+
+    .blog-row {
+        gap: 25px;
+    }
+
+    .blog-image img {
+        height: 220px;
+    }
+
+    /* ---------- Sidebar layout ---------- */
+    .sidebar {
+        transform: translateX(-100%);
+        z-index: 1001;
+    }
+
+    .sidebar.collapsed {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .content {
+        margin-left: 0 !important;
+        padding: 80px 25px;
+    }
+
+    .content.expanded {
+        margin-left: 0;
+    }
+
+    /* ---------- Track page ---------- */
+    .track-page {
+        margin-left: 0 !important;
+        padding: 80px 25px;
+    }
+
+    /* ---------- Portal title (topbar) ---------- */
+    .portal-title {
+        font-size: 15px;
+    }
+
+    /* ---------- Hero on user home ---------- */
+    .hero-container {
+        gap: 30px;
+    }
+
+    .hero-text h1 {
+        font-size: 32px;
+    }
+
+    /* ---------- Report issue form ---------- */
+    .report-header {
+        margin-left: 0;
+    }
+
+    .report-card {
+        padding: 20px;
+    }
+
+    .report-layout {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+
+    /* ---------- View issue page ---------- */
+    .issue-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .top-section {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* ---------- Duplicate modal ---------- */
+    .duplicate-card {
+        width: 90%;
+        padding: 25px;
+    }
+
+    .done-btn {
+        margin-left: auto;
+    }
+
+    /* ---------- Filter bar ---------- */
+    .filter-bar {
+        gap: 12px;
+    }
+}
+
+
+/* =================================================
+   MOBILE — max-width 768px
+================================================= */
+
+@media (max-width: 768px) {
+
+    /* ---------- Navbar ---------- */
+    .navbar {
+        padding: 12px 15px;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .navbar .logo {
+        font-size: 18px;
+    }
+
+    .navbar nav a {
+        margin-left: 10px;
+        font-size: 14px;
+    }
+
+    /* ---------- Simple header (index) ---------- */
+    .simple-header {
+        padding: 12px 15px;
+    }
+
+    .simple-header .logo {
+        font-size: 17px;
+    }
+
+    .header-links a {
+        margin-left: 12px;
+        font-size: 14px;
+    }
+
+    /* ---------- Index Hero ---------- */
+    .hero-bg {
+        height: 75vh;
+    }
+
+    .hero-overlay h1 {
+        font-size: 28px;
+    }
+
+    .hero-overlay p {
+        font-size: 15px;
+    }
+
+    .hero-overlay {
+        padding: 15px;
+    }
+
+    /* ---------- Blog section ---------- */
+    .blog-title {
+        font-size: 22px;
+        margin-bottom: 30px;
+    }
+
+    .blog-row {
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 35px;
+    }
+
+    .blog-row.reverse {
+        flex-direction: column;
+    }
+
+    .blog-image img {
+        height: 200px;
+    }
+
+    .blog-text h3 {
+        font-size: 19px;
+    }
+
+    /* ---------- Section / Cards ---------- */
+    .section h2 {
+        font-size: 22px;
+        margin-top: 40px;
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    /* ---------- CTA ---------- */
+    .cta-section {
+        padding: 40px 15px;
+    }
+
+    .cta-section h2 {
+        font-size: 20px;
+    }
+
+    /* ---------- Footer ---------- */
+    .footer {
+        padding: 12px 10px;
+        font-size: 13px;
+    }
+
+    /* ---------- Form pages (Login, Register, etc.) ---------- */
+    .form-section {
+        flex-direction: column;
+        padding: 15px;
+        min-height: auto;
+    }
+
+    .image2 {
+        display: none;
+    }
+
+    .form-card {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    /* ---------- Topbar ---------- */
+    .topbar {
+        padding: 0 12px;
+    }
+
+    .portal-title {
+        display: none;
+    }
+
+    .top-right {
+        width: auto;
+    }
+
+    /* ---------- Sidebar (overlay on mobile) ---------- */
+    .sidebar {
+        transform: translateX(-100%);
+        z-index: 1001;
+        width: 220px;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .sidebar.collapsed {
+        transform: translateX(-100%);
+    }
+
+    .content {
+        margin-left: 0 !important;
+        padding: 75px 15px 30px 15px;
+    }
+
+    .content.expanded {
+        margin-left: 0;
+    }
+
+    /* ---------- Track page ---------- */
+    .track-page {
+        margin-left: 0 !important;
+        margin-top: 60px;
+        padding: 20px 15px;
+    }
+
+    /* ---------- User home hero ---------- */
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .hero-text h1 {
+        font-size: 28px;
+    }
+
+    .hero-text p {
+        font-size: 16px;
+    }
+
+    .hero {
+        padding: 60px 15px;
+    }
+
+    .home-hero {
+        padding: 50px 15px;
+    }
+
+    /* ---------- Report issue ---------- */
+    .report-header {
+        margin-left: 0;
+        text-align: left;
+    }
+
+    .report-card {
+        padding: 15px;
+    }
+
+    .report-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .report-form {
+        grid-template-columns: 1fr;
+    }
+
+    .address-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        grid-column: span 1;
+    }
+
+    .upload-area {
+        height: 200px;
+    }
+
+    .submit-main {
+        width: 100%;
+        align-self: stretch;
+    }
+
+    /* ---------- Tables ---------- */
+    .table-container {
+        padding: 15px;
+        overflow-x: auto;
+    }
+
+    .issue-table {
+        min-width: 550px;
+    }
+
+    .issue-table th,
+    .issue-table td {
+        padding: 10px 8px;
+        font-size: 13px;
+    }
+
+    /* --- Authority Dashboard table: hide ID (1st), Location (3rd) & Date (4th) --- */
+    .authority-dashboard-table th:nth-child(1),
+    .authority-dashboard-table td:nth-child(1),
+    .authority-dashboard-table th:nth-child(3),
+    .authority-dashboard-table td:nth-child(3),
+    .authority-dashboard-table th:nth-child(4),
+    .authority-dashboard-table td:nth-child(4) {
+        display: none;
+    }
+
+    /* Fit remaining 4 columns (Issue Type, Priority, Status, Action) on mobile */
+    .authority-dashboard-table,
+    .authority-issues-table {
+        min-width: 0 !important;
+        width: 100%;
+        table-layout: fixed;
+    }
+
+    /* Shrink Issue Type column — Dashboard col 2, All-Issues col 3 */
+    .authority-dashboard-table th:nth-child(2),
+    .authority-dashboard-table td:nth-child(2) {
+        width: 28%;
+        word-break: break-word;
+    }
+
+    .authority-issues-table th:nth-child(3),
+    .authority-issues-table td:nth-child(3) {
+        width: 28%;
+        word-break: break-word;
+    }
+
+    /* Extra space between Status & Action columns */
+    .authority-dashboard-table th:last-child,
+    .authority-dashboard-table td:last-child,
+    .authority-issues-table th:last-child,
+    .authority-issues-table td:last-child {
+        padding-left: 16px;
+    }
+
+    /* --- Authority All-Issues table: hide ID (1st), User (2nd) & Location (4th) --- */
+    .authority-issues-table th:nth-child(1),
+    .authority-issues-table td:nth-child(1),
+    .authority-issues-table th:nth-child(2),
+    .authority-issues-table td:nth-child(2),
+    .authority-issues-table th:nth-child(4),
+    .authority-issues-table td:nth-child(4) {
+        display: none;
+    }
+
+    /* --- User My-Issues table: hide Place (2nd) --- */
+    .user-myissues-table th:nth-child(2),
+    .user-myissues-table td:nth-child(2) {
+        display: none;
+    }
+
+    /* Fit remaining 4 columns (Title, Date, Status, Track) on mobile */
+    .user-myissues-table {
+        min-width: 0 !important;
+        width: 100%;
+        table-layout: fixed;
+    }
+
+    /* Column widths: Title 30%, Date 25%, Status 28%, Track 17% */
+    .user-myissues-table th:nth-child(1),
+    .user-myissues-table td:nth-child(1) {
+        width: 30%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .user-myissues-table th:nth-child(3),
+    .user-myissues-table td:nth-child(3) {
+        width: 25%;
+    }
+
+    .user-myissues-table th:nth-child(4),
+    .user-myissues-table td:nth-child(4) {
+        width: 28%;
+        white-space: nowrap;
+    }
+
+    .user-myissues-table th:nth-child(5),
+    .user-myissues-table td:nth-child(5) {
+        width: 17%;
+        text-align: center;
+    }
+
+    .user-myissues-table th,
+    .user-myissues-table td {
+        padding: 10px 6px !important;
+        font-size: 12px;
+    }
+
+    /* ---------- Admin Dashboard ---------- */
+    .dashboard-header h2 {
+        font-size: 20px;
+    }
+
+    /* 2x2 grid for dashboard stat cards */
+    .dashboard-header~.card-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .stat-card {
+        width: 100%;
+        max-width: none;
+    }
+
+    /* ---------- Filter bar ---------- */
+    .filter-bar {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        gap: 10px;
+    }
+
+    .filter-group {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .filter-group select {
+        width: 100%;
+    }
+
+    .filter-reset {
+        flex: none;
+    }
+
+    /* ---------- View issue page ---------- */
+    .issue-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .top-section {
+        grid-template-columns: 1fr;
+    }
+
+    .image-card img {
+        height: 200px;
+    }
+
+    .issue-main-image {
+        height: 200px;
+    }
+
+    .view-header {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .view-header a {
+        margin-left: auto;
+    }
+
+    .info-row span:last-child {
+        max-width: 180px;
+    }
+
+    .comments-card {
+        height: auto;
+        max-height: 250px;
+    }
+
+    /* ---------- Duplicate modal ---------- */
+    .duplicate-card {
+        width: 95%;
+        padding: 20px;
+        max-height: 90vh;
+    }
+
+    .duplicate-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .duplicate-image-box {
+        width: 100%;
+        height: 220px;
+    }
+
+    .issue-info-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .duplicate-actions {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .done-btn {
+        margin-left: auto;
+        margin-right: 0;
+        margin-top: 20px;
+        width: auto;
+        display: block;
+        text-align: center;
+    }
+
+    /* ---------- Map modal ---------- */
+    #mapSearchContainer {
+        width: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #mapSearchInput {
+        width: 100%;
+    }
+
+    /* ---------- Welcome box ---------- */
+    #welcomeMessage {
+        font-size: 20px;
+    }
+
+    /* ---------- Lightbox ---------- */
+    .close-lightbox {
+        top: 15px;
+        right: 20px;
+        font-size: 30px;
+    }
+
+    .close-preview {
+        top: 15px;
+        right: 20px;
+        font-size: 28px;
+    }
+}
+
+
+/* =================================================
+   SMALL MOBILE — max-width 480px
+================================================= */
+
+@media (max-width: 480px) {
+
+    /* ---------- Index Hero ---------- */
+    .hero-bg {
+        height: 75vh;
+    }
+
+    .hero-overlay h1 {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    .hero-overlay p {
+        font-size: 13px;
+    }
+
+    /* ---------- Blog ---------- */
+    .blog-section {
+        padding: 10px 10px;
+    }
+
+    .blog-title {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .blog-text h3 {
+        font-size: 17px;
+    }
+
+    .blog-text p {
+        font-size: 14px;
+    }
+
+    .blog-image img {
+        height: 170px;
+    }
+
+    /* ---------- Section ---------- */
+    .section h2 {
+        font-size: 20px;
+        margin-top: 30px;
+    }
+
+    .section {
+        padding: 1px 10px;
+    }
+
+    /* ---------- Form pages ---------- */
+    .form-card {
+        padding: 18px;
+    }
+
+    .form-card h2 {
+        font-size: 18px;
+    }
+
+    /* ---------- User home hero ---------- */
+    .hero-text h1 {
+        font-size: 24px;
+    }
+
+    .hero-text p {
+        font-size: 14px;
+    }
+
+    .hero-card {
+        padding: 14px;
+    }
+
+    .hero-card h3 {
+        font-size: 15px;
+    }
+
+    .hero-card p {
+        font-size: 13px;
+    }
+
+    /* ---------- Cards ---------- */
+    .card {
+        padding: 15px;
+    }
+
+    .card h3 {
+        font-size: 16px;
+    }
+
+    /* ---------- Report issue ---------- */
+    .location-group {
+        flex-direction: column;
+    }
+
+    .location-group input {
+        width: 100%;
+    }
+
+    .pin-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .upload-area {
+        height: 170px;
+    }
+
+    /* ---------- Tables ---------- */
+    .issue-table {
+        min-width: 480px;
+        font-size: 12px;
+    }
+
+    .issue-table th,
+    .issue-table td {
+        padding: 8px 6px;
+    }
+
+    /* ---------- Duplicate modal ---------- */
+    .duplicate-card {
+        width: 98%;
+        padding: 15px;
+    }
+
+    .duplicate-header h3 {
+        font-size: 18px;
+    }
+
+    .duplicate-header p {
+        font-size: 13px;
+    }
+
+    .duplicate-image-box {
+        height: 180px;
+    }
+
+    .issue-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .upvote-btn,
+    .comment-btn {
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+
+    #commentInputBox {
+        flex-direction: column;
+    }
+
+    #commentInputBox input {
+        width: 100%;
+    }
+
+    #postCommentBtn {
+        width: 100%;
+    }
+
+    /* ---------- CTA section ---------- */
+    .cta-section h2 {
+        font-size: 18px;
+    }
+
+    .cta-text {
+        font-size: 14px;
+    }
+
+    .btn-dark {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+
+    /* ---------- View issue ---------- */
+    .info-row {
+        font-size: 13px;
+    }
+
+    .info-row span:last-child {
+        max-width: 150px;
+    }
+
+    .priority-badge,
+    .id-badge {
+        font-size: 12px;
+        padding: 3px 8px;
+    }
+
+    /* ---------- Status timeline ---------- */
+    .timeline {
+        padding-left: 15px;
+    }
+
+    .timeline-item::before {
+        left: -22px;
+        width: 10px;
+        height: 10px;
+    }
+
+    .timeline-status {
+        font-size: 14px;
+    }
+
+    .timeline-time,
+    .timeline-message {
+        font-size: 13px;
+    }
+
+    /* ---------- Welcome ---------- */
+    #welcomeMessage {
+        font-size: 18px;
+    }
+
+    /* ---------- Dashboard ---------- */
+    .dashboard-header h2 {
+        font-size: 18px;
+    }
+
+    .stat-number {
+        font-size: 18px;
+    }
+
+    .stat-label {
+        font-size: 12px;
+    }
+}
+
+
+/* =================================================
+   SIDEBAR OVERLAY BACKDROP (for mobile/tablet)
+================================================= */
+
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+}
+
+.sidebar-overlay.active {
+    display: block;
+}

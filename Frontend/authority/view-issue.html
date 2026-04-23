@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Issue | FixRoad Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body class="view-page">
+
+<!-- ================= Top Bar ================= -->
+<header class="topbar">
+    <div class="top-left">
+        <button id="menuToggle" class="menu-btn">☰</button>
+        <div class="logo">FixRoad Admin</div>
+    </div>
+</header>
+
+<!-- ================= Sidebar ================= -->
+<aside id="sidebar" class="sidebar">
+    <div class="sidebar-menu">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="all-issues.html" class="active">All Issues</a>
+    </div>
+
+    <div class="sidebar-logout">
+        <a href="#" onclick="logout(event)">Logout</a>
+    </div>
+</aside>
+
+<!-- Image Lightbox -->
+<div id="imageLightbox" class="lightbox">
+    <span class="close-lightbox">&times;</span>
+    <img id="lightboxImg" class="lightbox-content">
+</div>
+
+<!-- ================= Main Content ================= -->
+<main id="content" class="content">
+
+<div class="view-header">
+
+    <h3>
+         <span id="issueIdBadge" class="id-badge"></span>
+         <span id="priorityText" class="priority-badge"></span>
+   </h3>
+
+
+    <a href="all-issues.html" class="back-link">
+        ← Back to All Issues
+    </a>
+
+</div>
+
+
+<div class="issue-main-card">
+
+    <div class="issue-layout">
+
+    <!-- LEFT SIDE -->
+    <div class="left-panel">
+
+        <!-- IMAGE + DETAILS -->
+        <div class="top-section">
+
+            <!-- IMAGE -->
+            <div class="issue-card image-card">
+
+                <button id="prevImageBtn">❮</button>
+
+                <img class="issue-main-image preview-image" alt="Reported Issue">
+
+                <button id="nextImageBtn">❯</button>
+
+            </div>
+
+            <!-- DETAILS -->
+            <div class="issue-card details-card">
+
+                <h3 id="issueTypeTitle"></h3>
+
+                <div class="info-row">
+                    <span>Reported By</span>
+                    <span id="issueUser"></span>
+                </div>
+
+                <div class="info-row">
+                    <span>Location</span>
+                    <span id="issueLocation"></span>
+                </div>
+
+                <div class="info-row">
+                    <span>Date</span>
+                    <span id="issueDate"></span>
+                </div>
+
+                <div class="info-row">
+                    <span>Status</span>
+                    <span id="issueStatus"></span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- COMMENTS / CITIZEN CONCERN -->
+        <div class="issue-card comments-card">
+
+            <h3>Citizen’s Concern</h3>
+
+            <div id="commentsContainer">
+                <p style="color:#777;">No comments yet</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- RIGHT SIDE -->
+    <div class="right-panel">
+
+        <!-- ASSIGN REPAIR -->
+        <div class="issue-card">
+
+            <h3>Assign Repair Team</h3>
+
+            <label>Repair Team / Contractor</label>
+            <input type="text" id="repairTeamName" disabled>
+
+            <label>Contact Number</label>
+            <input type="text" id="repairContactNumber" disabled>
+
+            <button id="editRepairBtn" onclick="onClickEditRepair()">Edit</button>
+            
+            <button class="btn-dark" id="saveRepairBtn" onclick="assignRepairTeam()">
+                <span id="repairBtnText">Save</span>
+                <span id="repairLoader" class="loader" style="display:none;"></span>
+            </button>
+
+            <p id="repairLoading" style="display:none;">Assigning repair team...</p>
+            <p id="repairAssignMessage"></p>
+
+        </div>
+
+        <!-- UPDATE STATUS -->
+        <div class="issue-card">
+
+            <h3>Update Issue Status</h3>
+
+            <label>Status</label>
+
+            <select id="statusSelect">
+                <option value="REPORTED">Reported</option>
+                <option value="IN_PROGRESS">In Progress</option>
+                <option value="RESOLVED">Resolved</option>
+            </select>
+
+            <button id="updateStatusBtn" class="btn-dark" onclick="updateStatus()">
+                <span id="statusBtnText">Update Status</span>
+                <span id="statusLoader" class="loader" style="display:none;"></span>
+            </button>
+
+            <p id="statusLoading" style="display:none;">Updating status...</p>
+            <p id="statusUpdateMessage"></p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+</main>
+
+<div id="imagePreview" class="image-preview">
+
+    <span class="close-preview">&times;</span>
+
+    <img id="previewImg">
+
+</div>
+
+<!-- JS -->
+<script src="/js/script.js"></script>
+<script src="/js/view-issue.js"></script>
+<script>
+    protectPage("AUTHORITY");
+</script>
+
+</body>
+</html>

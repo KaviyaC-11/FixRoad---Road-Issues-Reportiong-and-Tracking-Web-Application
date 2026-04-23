@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta charset="UTF-8">
+    <title>Report Issue | FixRoad</title>
+
+    <!-- Responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+<!-- ================= Top Bar ================= -->
+<header class="topbar">
+
+    <!-- LEFT -->
+    <div class="top-left">
+        <button id="menuToggle" class="menu-btn">☰</button>
+        <div class="logo">FixRoad</div>
+    </div>
+
+    <!-- CENTER TITLE -->
+    <div class="portal-title">
+        Road Issue Reporting and Tracking Portal
+    </div>
+
+    <!-- RIGHT EMPTY SPACE (for balance) -->
+    <div class="top-right"></div>
+
+</header>
+
+<!-- ================= Sidebar ================= -->
+<aside id="sidebar" class="sidebar">
+
+    <!-- Main menu -->
+    <div class="sidebar-menu">
+        <a href="home.html">Home</a>
+        <a href="report-issue.html">Report Issue</a>
+        <a href="my-issues.html">My Issues</a>
+    </div>
+
+    <!-- Logout section -->
+    <div class="sidebar-logout">
+    <a href="#" onclick="logout(event)">Logout</a>
+    </div>
+</aside>
+
+<!-- ================= Main Content ================= -->
+<main id="content" class="content">
+
+    <div class="report-header">
+    <h2>Report Issues</h2>
+    <p>Please provide details about the road issue you encountered.</p>
+</div>
+
+    <div class="report-card">
+
+       <form id="issueForm" class="report-layout">
+
+    <!-- LEFT COLUMN -->
+    <div class="report-col">
+
+        <div class="form-row">
+            <label>Issue Type *</label>
+            <select id="issueType" required>
+                <option value="">Select issue type</option>
+                <option>Pothole</option>
+                <option>Damaged Road</option>
+                <option>Waterlogging</option>
+                <option>Streetlight Issue</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <div class="form-row" id="otherIssueBox">
+            <label>Specify Issue *</label>
+            <input type="text" id="otherIssue">
+        </div>
+
+        <!-- LOCATION INPUT -->
+       <div class="form-row">
+
+    <label>Location *</label>
+
+    <div class="location-group">
+
+        <input type="text"
+               id="locationInput"
+               placeholder="Enter location or Use GPS"
+               required>
+
+        <button type="button"
+                id="gpsBtn"
+                class="pin-btn">
+
+          Use GPS
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- Road Category -->
+<div class="form-group">
+    <label for="roadCategory">Road Category *</label>
+    <select id="roadCategory" name="roadCategory" required>
+        <option value="">Select Road Category</option>
+        <option value="HIGHWAY">Highway</option>
+        <option value="MAIN_ROAD">Main Road</option>
+        <option value="SCHOOL_ZONE">School Zone</option>
+        <option value="STREET">Street</option>
+        <option value="OTHER">Others (Specify)</option>
+    </select>
+</div>
+
+<!-- Other Road Category Input -->
+<div class="form-group" id="otherRoadCategoryBox" style="display:none;">
+    <label for="otherRoadCategory">Specify Road Category</label>
+    <input type="text" id="otherRoadCategory" placeholder="Enter road category">
+</div>
+
+        <div class="form-row">
+
+            <label>Description</label>
+
+            <textarea id="description"></textarea>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- RIGHT COLUMN -->
+    <div class="report-col">
+
+        <div class="form-group">
+    <label for="damageSeverity">Road Damage Severity *</label>
+
+    <p class="severity-helper">
+        How severely does this road issue affect daily travel in your area?
+        <br>
+        Please select the option that best describes the situation.
+    </p>
+
+    <select id="damageSeverity" name="damageSeverity" required>
+        <option value="">Select severity</option>
+        <option value="LOW">Minor inconvenience</option>
+        <option value="MEDIUM">Moderate problem</option>
+        <option value="HIGH">Serious problem</option>
+        <option value="CRITICAL">Extremely dangerous</option>
+    </select>
+</div>
+
+        <div class="form-row">
+
+            <label>Upload Photo *</label>
+
+            <div class="upload-area"
+                 onclick="document.getElementById('imageInput').click()">
+
+                <input type="file" id="imageInput" hidden>
+
+                <div class="upload-inner">
+
+                    <div class="upload-cloud">☁</div>
+
+                    <div class="upload-text">
+                        Upload Image
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <button type="submit"
+                id="submitBtn"
+                class="submit-main">
+
+            SUBMIT
+
+        </button>
+
+        <div id="errorMessage" class="error-box"></div>
+
+    </div>
+
+</form>
+
+        <!-- Success Popup -->
+<div id="successPopup" class="success-popup">
+    <div class="popup-content">
+        <div class="tick">✔</div>
+        <h3>Reported Successfully!</h3>
+        <p>Your issue has been submitted.</p>
+    </div>
+</div>
+
+
+    </div>
+</main>
+
+<!-- Main JavaScript -->
+
+<script async
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCueJtdltQgPiAhv-mIrufDz6Ts7LFUNcA&libraries=places&loading=async">
+</script>
+
+<script src="/js/script.js"></script>
+<script src="/js/reportissue.js"></script>
+
+<div id="mapModal" style="
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+    z-index:9999;
+">
+
+    <div style="
+        width:80%;
+        height:80%;
+        background:white;
+        margin:5% auto;
+        position:relative;
+        padding:10px;
+    ">
+
+        <button onclick="closeMap()" style="
+            position:absolute;
+            top:10px;
+            right:10px;
+            z-index:10000;
+        ">Close</button>
+
+        <div id="map" style="width:100%; height:100%;"></div>
+
+    </div>
+
+</div>
+
+<!-- ==============================
+     DUPLICATE ISSUE MODAL
+================================== -->
+
+<div id="duplicateModal" class="duplicate-modal" style="display:none;">
+
+    <div class="duplicate-card">
+
+        <!-- Close Button -->
+        <span class="close-duplicate" id="closeDuplicateModal">&times;</span>
+
+        <!-- Header -->
+        <div class="duplicate-header">
+            <h3>Issue Already Reported</h3>
+            <p>
+                This issue has already been reported. We encourage you to support
+                the existing complaint by upvoting and adding relevant comments.
+                If necessary, you may also attach additional images to provide
+                more context.
+            </p>
+        </div>
+
+        <!-- TOP ROW -->
+        <div class="duplicate-content">
+
+            <!-- LEFT: IMAGE -->
+            <div class="duplicate-image-box">
+
+                <!-- Original / Uploaded Image -->
+                <img id="duplicateImage" src="" alt="Issue Image">
+
+                <!-- Add Image Button -->
+                <div class="image-upload-overlay" id="addImageBtn">
+                    📷 Add Image
+                </div>
+
+                <!-- ✅ REMOVE BUTTON (THIS IS REQUIRED) -->
+               <div class="remove-image-btn" id="removeImageBtn">
+                 ✖
+               </div>
+
+                <!-- Hidden File Input -->
+                <input type="file"
+                       id="duplicateImageInput"
+                       accept="image/*"
+                       hidden>
+
+            </div>
+
+            <!-- RIGHT: DETAILS -->
+            <div class="duplicate-details">
+
+                <div class="issue-meta-top">
+                    <span class="issue-id" id="duplicateIssueId"></span>
+                    <span class="status-badge open" id="duplicateStatus"></span>
+                </div>
+
+                <h4 id="duplicateTitle"></h4>
+
+                <p id="duplicateDescription"></p>
+
+                <div class="issue-info-grid">
+
+                    <div>
+                        <span class="info-label">Location</span>
+                        <div id="duplicateLocation"></div>
+                    </div>
+
+                    <div>
+                        <span class="info-label">Category</span>
+                        <div id="duplicateCategory"></div>
+                    </div>
+
+                    <div>
+                        <span class="info-label">Reported On</span>
+                        <div id="duplicateCreatedAt"></div>
+                    </div>
+
+                    <div>
+                        <span class="info-label">Severity</span>
+                        <div class="severity" id="duplicateSeverity"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        
+
+        <!-- BOTTOM FULL WIDTH SECTION -->
+        <div class="duplicate-bottom">
+
+            <div id="duplicateErrorMessage" class="duplicate-error" style="display:none;"></div>
+
+            <!-- ACTION BUTTONS -->
+            <div class="duplicate-actions">
+
+                <button class="upvote-btn" id="upvoteBtn">
+                    Upvote (<span id="upvoteCount">0</span>)
+                </button>
+
+                <button class="comment-btn" id="toggleCommentBtn">
+                    Add Comment
+                </button>
+
+            </div>
+
+            <!-- COMMENT INPUT -->
+            <div id="commentInputBox" style="display:none;">
+
+                <input type="text"
+                       id="newCommentInput"
+                       placeholder="Write your comment...">
+
+                <button id="postCommentBtn">
+                    Post
+                </button>
+
+            </div>
+
+
+            <button class="done-btn" id="doneBtn">
+                Done
+            </button>
+
+            <!-- COMMENTS LIST -->
+            <div class="duplicate-comments">
+
+                <h4>Comments</h4>
+
+                <div id="duplicateCommentList">
+                    <!-- Comments will be inserted here dynamically -->
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+</body>
+</html>

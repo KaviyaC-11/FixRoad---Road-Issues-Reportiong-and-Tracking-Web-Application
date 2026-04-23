@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard | FixRoad</title>
+
+    <!-- Responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+<!-- ================= Top Bar ================= -->
+<header class="topbar">
+    <div class="top-left">
+        <!-- Sidebar toggle button -->
+        <button id="menuToggle" class="menu-btn">☰</button>
+        <div class="logo">FixRoad Admin</div>
+    </div>
+</header>
+
+<!-- ================= Sidebar ================= -->
+<aside id="sidebar" class="sidebar">
+
+    <!-- Admin menu -->
+    <div class="sidebar-menu">
+        <a href="dashboard.html" class="active">Dashboard</a>
+        <a href="all-issues.html">All Issues</a>
+    </div>
+
+    <!-- Logout section -->
+    <div class="sidebar-logout">
+        <a href="../login.html">Logout</a>
+    </div>
+</aside>
+
+<!-- ================= Main Content ================= -->
+<main id="content" class="content">
+
+    <!-- ===== Dashboard Header ===== -->
+    <div class="dashboard-header">
+        <h2>Authority Control Panel</h2>
+        <p class="dashboard-subtitle">
+             Road Issue Monitoring System
+        </p>
+    </div>
+
+
+    <!-- ===== Statistics Cards ===== -->
+    <div class="card-container">
+
+        <div class="card stat-card">
+            <h3>Total Issues</h3>
+            <p class="stat-number" id="totalIssues">0</p>
+            <span class="stat-label">Reports Submitted</span>
+        </div>
+
+        <div class="card stat-card">
+            <h3>Reported</h3>
+           <p class="stat-number status-danger" id="reportedIssues">0</p>
+            <span class="stat-label">Awaiting Action</span>
+        </div>
+
+        <div class="card stat-card">
+            <h3>In Progress</h3>
+        <p class="stat-number" id="inProgressIssues" style="color:orange;">0</p>
+            <span class="stat-label">Under Repair</span>
+        </div>
+
+        <div class="card stat-card">
+            <h3>Resolved</h3>
+            <p class="stat-number status-success" id="resolvedIssues">0</p>
+            <span class="stat-label">Completed</span>
+        </div>
+
+    </div>
+
+
+    <!-- ===== Divider ===== -->
+    <div class="section-divider"></div>
+
+
+    <!-- ===== Recent Reports ===== -->
+    <div class="recent-reports">
+
+        <div class="section-header">
+             <h3>Recent Reports</h3>
+            <a href="all-issues.html" class="view-link">View All Issues</a>
+        </div>
+
+        <div class="table-container">
+
+            <table class="issue-table authority-dashboard-table">
+
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Issue Type</th>
+                        <th>Location</th>
+                        <th>Date</th>
+                        <th>Priority</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                    <tbody id="recentIssuesTable"></tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</main>
+
+<!-- Main JavaScript -->
+<script src="/js/script.js"></script>
+<script src="/js/dashboard.js"></script>
+<script>
+    protectPage("AUTHORITY");
+</script>
+
+</body>
+</html>
