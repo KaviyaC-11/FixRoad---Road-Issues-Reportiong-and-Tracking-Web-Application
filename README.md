@@ -27,6 +27,8 @@ FixRoad ensures faster resolution, better transparency, and improved road mainte
 
 **Build Tool:** Maven
 
+**AI Assistance:** ChatGPT and Claude (Used for coding support)
+
 ##  Algorithms Used
 
 ### Duplicate Detection
