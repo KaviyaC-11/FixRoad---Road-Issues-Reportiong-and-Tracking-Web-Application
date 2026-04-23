@@ -271,18 +271,48 @@ mvnw.cmd spring-boot:run
 
 Open HTML files from  Live Server in VS Code or any other IDE.
 
+-----------------------------------------------------------------------------------------------------------------------------------
 
 ## Screenshots
 
 
+### Landing Page
+![Landing](screenshots/landing.png)
+
+### Register Page
+![Register](screenshots/register.png)
+
+### Login Page
 ![Login](screenshots/login.png)
 
-![Report](screenshots/report.png)
+### User Home
+![User Home](screenshots/user-home.png)
 
+### Report Issue
+![Report Issue](screenshots/report-issue.png)
+
+### Issue Submitted
+![Issue Submitted](screenshots/issue-submitted.png)
+
+### My Issues
+![My Issues](screenshots/my-issues.png)
+
+### Status Tracking
+![Status Tracking](screenshots/status-tracking.png)
+
+### Duplicate Detection
+![Duplicate](screenshots/duplicate-popup.png)
+
+### Admin Dashboard
 ![Dashboard](screenshots/dashboard.png)
 
-![Admin](screenshots/admin.png)
+### All Reported Issues
+![All Issues](screenshots/all-reported-issues.png)
 
+### View Issue
+![View Issue](screenshots/issue-view.png)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ##  Future Improvements
 
